@@ -33,24 +33,10 @@
       overflow: hidden;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: blur(3px);
-      transform: scale(1.1); /* biar ga ada garis pinggir */
-      z-index: -1; /* biar tetap di belakang konten */
-    }
+    header::before,
     header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(26, 25, 25, 0.4); /* hitam transparan */
-    z-index: -1;
-  }
-
+      content: none;
+    }
     /* Produk Section */
     .produk {
       padding: 40px 20px;
@@ -245,7 +231,7 @@
 
   <!-- Teks -->
   <a href="#" 
-     class="logo-text select-none text-2xl font-bold tracking-wider text-white text-center"
+     class="logo-text select-none text-2xl font-bold tracking-wider text-black text-center"
      aria-label="ANJANI homepage">
     ANJANI
   </a>
@@ -368,6 +354,7 @@
   © 2025 ANJANI. All rights reserved
 </body>
 </html>
+
 
 
 
