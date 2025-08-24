@@ -1,0 +1,245 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f4f4f4;
+}
+header {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 1000;
+    /* background: linear-gradient(to top, #b48d5f, #f0d55d); */
+    text-align: center;
+}
+/* bagian home */
+#home {
+    margin-top: 58px;
+    text-align: center;
+    background-image: url(image/bg.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+#produk {
+    margin-top: 58px;
+}
+
+#home h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#home p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    background: #fff;
+    border-radius: 5px;
+}
+
+.produk-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.produk-list div {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    flex: 1 1 200px; /* Flexible sizing for products */
+}
+
+.produk-list div:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex; /* Display ul as flex to achieve horizontal layout */
+        justify-content: center; /* Center the items */
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+    }
+
+    nav ul li {
+        display: inline; /* Keep items inline */
+        margin: 5px; /* Adjust margin for spacing */
+    }
+
+    .produk-list {
+        justify-content: center; /* Center product items */
+    }
+
+    .produk-list div {
+        flex: 1 1 100%; /* Products take full width on smaller screens */
+    }
+}
+
+/* Animasi Fade In dari atas */
+    @keyframes fadeDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animasi Fade In dari bawah */
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Header animasi */
+    header {
+        background-color: rgb(0,0,0,0.5);
+        color: rgb(252, 246, 246);
+        padding: 15px;
+        text-align: center;
+        animation: fadeDown 1s ease forwards;
+    }
+
+    header nav ul {
+        list-style: none;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #ffeb3b;
+    }
+
+    /* Section home & produk animasi */
+    #home, #produk {
+        padding: 30px;
+        text-align: center;
+        animation: fadeUp 1.2s ease forwards;
+    }
+
+    #produk {
+        animation-delay: 0.3s; /* Produk muncul sedikit setelah home */
+    }
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0; /* Increase padding for header on small devices */
+    }
+    section {
+        padding: 15px; /* Decrease padding in section for small devices */
+    }
+}
+
+ /* Style untuk section kontak */
+    #kontak {
+        /* background: linear-gradient(135deg, #f3e5f5, #4B3A26); */
+        margin-top: 70px;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 40px auto;
+        text-align: center;
+        animation: fadeInUp 1s ease-in-out;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #kontak h2 {
+        color: #09050c;
+        margin-bottom: 10px;
+    }
+
+    #kontak p {
+        color: #06030a;
+        font-size: 16px;
+    }
+
+    #kontak ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    #kontak li {
+        margin: 10px 0;
+    }
+
+    #kontak a {
+        text-decoration: none;
+        color: white;
+        background-color: #4B3A26;
+        padding: 10px 15px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #kontak a:hover {
+        transform: scale(1.05);
+        background-color: #4B3A26;
+    }
+
+    /* Animasi muncul dari bawah */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    footer {
+        background-color: #4B3A26;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        animation: fadeInUp 1s ease-in-out;
+    }

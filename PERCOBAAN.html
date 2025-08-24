@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ANJANI - kerajinan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      position: relative;
+      height: 80px; /* atur sesuai kebutuhan */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('image/batik.webp');
+      background-size: cover;
+      background-position: center;
+      filter: blur(3px);
+      transform: scale(1.1); /* biar ga ada garis pinggir */
+      z-index: -1; /* biar tetap di belakang konten */
+    }
+    header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 25, 25, 0.4); /* hitam transparan */
+    z-index: -1;
+  }
+
+    /* Produk Section */
+    .produk {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .produk h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .produk-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .card-body p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Animasi fadeUp */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 20px;
+      }
+      .produk h2 {
+        font-size: 22px;
+      }
+      .card-body h3 {
+        font-size: 16px;
+      }
+      .card-body p {
+        font-size: 14px;
+      }
+    }
+
+    /* Section Kontak */
+    #kontak {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    #kontak h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #222;
+      text-align: center;
+    }
+
+    #kontak p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #kontak ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    #kontak li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #222;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background .3s ease;
+    }
+
+    #kontak li a:hover {
+      background: #ebca14;
+    }
+
+    /* Ikon WA & Telepon */
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.08);
+      padding: 30px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    footer p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Animasi */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      #kontak ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body class="bg-white text-gray-700 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+<header class="w-full shadow-sm py-4 px-8 flex justify-center items-center sticky top-0 bg-white z-20 relative">
+  <!-- Logo -->
+  <img src="image/logo.png" alt="logo ANJANI" width="60" class="mr-3">
+
+  <!-- Teks -->
+  <a href="#" class="logo-text select-none text-2xl font-bold tracking-wider" aria-label="ANJANI homepage" style="color:#ffffff;">
+    ANJANI
+  </a>
+</header>
+
+
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    <div class="mt-0 w-full h-screen relative overflow-hidden">
+      <!-- Slides -->
+      <div class="flex transition-transform duration-700 ease-in-out h-full" id="slider">
+        <img src="image/Poto1.jpg" alt="Foto kebersamaan 1" class="w-full h-full object-cover flex-shrink-0" />
+        <img src="image/Poto2.jpg" alt="Foto kebersamaan 2" class="w-full h-full object-cover flex-shrink-0" />
+      </div>
+
+      <!-- Tombol Navigasi -->
+      <button id="prev" class="absolute top-1/2 left-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">‹</button>
+      <button id="next" class="absolute top-1/2 right-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">›</button>
+    </div>
+  </main>
+  <hr>
+  <!-- PRODUK -->
+  <section class="produk">
+    <h2>Produk</h2>
+    <div class="produk-list">
+
+      <div class="card">
+        <img src="image/Sokasi.jpg" alt="Sok asi">
+        <div class="card-body">
+          <h3>Sokasi</h3>
+          <p>Rp 25.000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/Ingke.jpg" alt="Ingke">
+        <div class="card-body">
+          <h3>Ingke</h3>
+          <p>Rp 20.000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/bunderan.jpg" alt="Kasang">
+        <div class="card-body">
+          <h3>Kasang</h3>
+          <p>Rp 20.000 - 35.000</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr>
+  <!-- KONTAK -->
+  <section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Silakan hubungi kami melalui WhatsApp atau telepon langsung:</p>
+    <ul>
+      <li>
+        <a href="https://wa.me/6287750444048" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon">
+          WhatsApp
+        </a>
+      </li>
+      <li>
+        <a href="tel:+6287750444048">
+          <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Telepon" class="icon">
+          +62 877 5044 4048
+        </a>
+      </li>
+    </ul>
+  </section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const totalSlides = slider.children.length;
+  let index = 0;
+  let autoSlide;
+
+  function showSlide() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide();
+  }
+
+  document.getElementById("next").onclick = () => {
+    nextSlide();
+    resetAutoSlide();
+  };
+  document.getElementById("prev").onclick = () => {
+    prevSlide();
+    resetAutoSlide();
+  };
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  startAutoSlide();
+</script>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-50 border-t border-gray-200 text-center py-6 mt-16 text-sm text-gray-500 select-none">
+    © 2025 ANJANI. All rights reserved.
+  </footer>
+</body>
+</html>
+

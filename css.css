@@ -1,0 +1,116 @@
+    /* Custom fonts and colors */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    /* Logo text style */
+    .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 1.75rem;
+      letter-spacing: 2px;
+      color: #444444;
+      user-select: none;
+    }
+
+    /* Header nav links */
+    nav a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #555555;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #B17E4F;
+    }
+
+    /* Animations */
+    @keyframes fadeInSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animate header elements */
+    .animate-fade-slide {
+      animation: fadeInSlideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    /* Fade in slideshow container */
+    .fade-slide-delay-1 {
+      animation-delay: 0.4s;
+    }
+    .fade-slide-delay-2 {
+      animation-delay: 0.8s;
+    }
+    .fade-slide-delay-3 {
+      animation-delay: 1.2s;
+    }
+
+    /* Slideshow styles */
+    .slideshow {
+      perspective: 1200px;
+      overflow: hidden;
+      position: relative;
+      height: 480px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgb(0 0 0 / 0.15);
+    }
+    .slide {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      transition: opacity 1s ease;
+    }
+    .slide.active {
+      opacity: 1;
+      z-index: 10;
+      animation: fadeInSlideUp 1s ease forwards;
+    }
+    .slide img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Cart bubble style */
+    .cart-bubble {
+      background-color: #B17E4F;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      border-radius: 9999px;
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .logo-text {
+        font-size: 1.5rem;
+      }
+      .slideshow {
+        height: 300px;
+      }
+    }
