@@ -37,7 +37,6 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('image/batik.webp');
       background-size: cover;
       background-position: center;
       filter: blur(3px);
@@ -238,14 +237,15 @@
 </head>
 <body class="bg-white text-gray-700 min-h-screen flex flex-col">
 
-  <!-- HEADER -->
-<header class="w-full shadow-sm py-4 px-6 flex items-center sticky top-0 bg-white z-20">
+<!-- HEADER -->
+<header class="w-full shadow-sm py-4 px-6 flex items-center justify-center sticky top-0 bg-white z-20 relative">
   <!-- Logo -->
-  <img src="image/logo.png" alt="logo ANJANI" class="w-12 h-auto mr-3">
+  <img src="image/logo.png" alt="logo ANJANI" 
+       class="w-12 h-auto mr-3 lg:static absolute left-4 top-1/2 -translate-y-1/2 lg:translate-y-0" />
 
   <!-- Teks -->
   <a href="#" 
-     class="logo-text select-none text-2xl font-bold tracking-wider text-white"
+     class="logo-text select-none text-2xl font-bold tracking-wider text-white text-center"
      aria-label="ANJANI homepage">
     ANJANI
   </a>
@@ -365,6 +365,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
