@@ -251,20 +251,25 @@
   </a>
 </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-grow">
-    <div class="mt-0 w-full h-screen relative overflow-hidden">
-      <!-- Slides -->
-      <div class="flex transition-transform duration-700 ease-in-out h-full" id="slider">
-        <img src="image/Poto1.jpg" alt="Foto kebersamaan 1" class="w-full h-full object-cover flex-shrink-0" />
-        <img src="image/Poto2.jpg" alt="Foto kebersamaan 2" class="w-full h-full object-cover flex-shrink-0" />
-      </div>
-
-      <!-- Tombol Navigasi -->
-      <button id="prev" class="absolute top-1/2 left-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">‹</button>
-      <button id="next" class="absolute top-1/2 right-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">›</button>
+ <!-- MAIN CONTENT -->
+<main class="flex-grow">
+  <div class="mt-0 w-full h-[70vh] md:h-screen relative overflow-hidden">
+    <!-- Slides -->
+    <div class="flex transition-transform duration-700 ease-in-out h-full" id="slider">
+      <img src="image/Poto1.jpg" 
+           alt="Foto kebersamaan 1" 
+           class="w-full h-full object-contain md:object-cover object-center flex-shrink-0 bg-black" />
+      <img src="image/Poto2.jpg" 
+           alt="Foto kebersamaan 2" 
+           class="w-full h-full object-contain md:object-cover object-center flex-shrink-0 bg-black" />
     </div>
-  </main>
+
+    <!-- Tombol Navigasi -->
+    <button id="prev" class="absolute top-1/2 left-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">‹</button>
+    <button id="next" class="absolute top-1/2 right-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full">›</button>
+  </div>
+</main>
+
   <hr>
   <!-- PRODUK -->
   <section class="produk">
@@ -365,6 +370,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
